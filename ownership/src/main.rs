@@ -41,6 +41,12 @@ fn main() {
     let fg = change(&mut grt); // Changes made will be propagate to 'grt'
     println!("{}", fg);
     println!("{}", grt); // Both same now!
+
+    println!("------------ Slice - Ownership  -------------");
+    let greeting = String::from("Hello, World!");
+    let hello = &greeting[..5];
+    println!("{}", hello);
+    println!("{}", &greeting[7..]); // This work also on arrays
 }
 
 fn capture_ownership(str: String) {
