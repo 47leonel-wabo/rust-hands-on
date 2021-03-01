@@ -1,5 +1,5 @@
 [package]
-name = "struct"
+name = "data_structure"
 version = "0.1.0"
 authors = ["leonel47 <waboleonel@gmail.com>"]
 edition = "2018"
