@@ -22,6 +22,8 @@ fn main() {
     let s = String::from("Owner captured!");
     capture_ownership(s);
     //println!("{}", s); // ERROR AS OWNER WAS MOVED
+    let v = gives_ownership();
+    println!("{}", v);
 
     println!("------------ Cloning Owner  -------------");
     let mut a = String::from("a value"); // Store in a heap
@@ -31,10 +33,25 @@ fn main() {
     println!("{}", a);
     println!("{}", b);
 
-    println!("------------ Copying Owner  -------------");
+    println!("------------ IMMUTABLE References  -------------");
+    println!("{}", get_length(&v)); // Use value by IMMUTABLE reference
 
+    println!("------------ MUTABLE References  -------------");
+    let mut grt = String::from("Original");
+    let fg = change(&mut grt); // Changes made will be propagate to 'grt'
+    println!("{}", fg);
+    println!("{}", grt); // Both same now!
 }
 
-fn capture_ownership(str: String){
+fn capture_ownership(str: String) {
     println!("{}", str);
+}
+
+fn gives_ownership() -> String { String::from("Owner gives") }
+
+fn get_length(str: &String) -> usize { str.len() }
+
+fn change(str: &mut String) -> &mut String {
+    str.push_str(", added string");
+    str
 }
