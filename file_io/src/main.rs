@@ -34,6 +34,8 @@ fn main() {
             .open("my_file.txt")
             .expect("Unable to open this file"); // For Read and Write
         */
+
+    // APPENDING TO FILE
     let mut mf = OpenOptions::new()
         .append(true) // Here, we enable append option
         .open("my_file.txt")
