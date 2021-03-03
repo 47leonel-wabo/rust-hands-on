@@ -13,6 +13,9 @@
 * Generics
 * Standard I/O
 * Files
+* Smart pointer
+* Iterator
+* Closure
 
 ## Credit
 Free to use :)
